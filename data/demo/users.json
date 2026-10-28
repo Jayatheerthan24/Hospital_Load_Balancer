@@ -1,0 +1,44 @@
+[
+  {
+    "id": "USR-ADM-1",
+    "username": "admin",
+    "password_hash": "admin123",
+    "name": "Hospital Administrator",
+    "role": "ADMIN",
+    "email": "admin@hospital.org"
+  },
+  {
+    "id": "USR-DOC-1",
+    "username": "dr.mitchell",
+    "password_hash": "doctor123",
+    "name": "Dr. Sarah Mitchell",
+    "role": "DOCTOR",
+    "doctor_id": "DOC-101",
+    "email": "sarah.mitchell@hospital.org"
+  },
+  {
+    "id": "USR-DOC-2",
+    "username": "dr.sharma",
+    "password_hash": "doctor123",
+    "name": "Dr. Rajesh Sharma",
+    "role": "DOCTOR",
+    "doctor_id": "DOC-105",
+    "email": "rajesh.sharma@hospital.org"
+  },
+  {
+    "id": "USR-STF-1",
+    "username": "triage_nurse",
+    "password_hash": "staff123",
+    "name": "Nurse Jordan Hayes",
+    "role": "STAFF",
+    "email": "triage.nurse@hospital.org"
+  },
+  {
+    "id": "USR-PAT-1",
+    "username": "patient",
+    "password_hash": "patient123",
+    "name": "John Doe",
+    "role": "PATIENT",
+    "email": "john.doe@example.com"
+  }
+]

@@ -1,0 +1,82 @@
+[
+  {
+    "id": "DEP-EMG",
+    "code": "EMG",
+    "name": "Emergency Medicine",
+    "description": "Acute and life-threatening conditions, trauma, resuscitation",
+    "color": "#ef4444",
+    "icon": "Activity",
+    "base_consultation_time": 25,
+    "max_queue_target": 15,
+    "downstream_probabilities": {
+      "CT": 0.40,
+      "US": 0.25,
+      "XR": 0.35,
+      "LAB": 0.75,
+      "PROC": 0.20,
+      "CRD_CONSULT": 0.15
+    }
+  },
+  {
+    "id": "DEP-GEN",
+    "code": "GEN",
+    "name": "General Medicine",
+    "description": "Adult acute primary care, fever, respiratory, infections",
+    "color": "#3b82f6",
+    "icon": "Stethoscope",
+    "base_consultation_time": 15,
+    "max_queue_target": 20,
+    "downstream_probabilities": {
+      "XR": 0.25,
+      "LAB": 0.50,
+      "ECG": 0.20,
+      "PROC": 0.05
+    }
+  },
+  {
+    "id": "DEP-CRD",
+    "code": "CRD",
+    "name": "Cardiology",
+    "description": "Chest pain, arrhythmias, hypertension, heart failure",
+    "color": "#ec4899",
+    "icon": "Heart",
+    "base_consultation_time": 20,
+    "max_queue_target": 12,
+    "downstream_probabilities": {
+      "ECG": 0.85,
+      "LAB": 0.60,
+      "US": 0.30,
+      "CT": 0.15
+    }
+  },
+  {
+    "id": "DEP-ORT",
+    "code": "ORT",
+    "name": "Orthopedics",
+    "description": "Fractures, sprains, joint pain, musculoskeletal trauma",
+    "color": "#f59e0b",
+    "icon": "Bone",
+    "base_consultation_time": 18,
+    "max_queue_target": 15,
+    "downstream_probabilities": {
+      "XR": 0.85,
+      "PROC": 0.30,
+      "CT": 0.10
+    }
+  },
+  {
+    "id": "DEP-PED",
+    "code": "PED",
+    "name": "Pediatrics",
+    "description": "Infant, child, and adolescent triage and care",
+    "color": "#10b981",
+    "icon": "Baby",
+    "base_consultation_time": 15,
+    "max_queue_target": 18,
+    "downstream_probabilities": {
+      "LAB": 0.40,
+      "XR": 0.20,
+      "PROC": 0.10
+    }
+  }
+]

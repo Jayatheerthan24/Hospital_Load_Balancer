@@ -1,0 +1,80 @@
+[
+  {
+    "id": "RES-CT-1",
+    "code": "CT",
+    "name": "Computed Tomography (CT Scanner)",
+    "category": "IMAGING",
+    "total_units": 2,
+    "active_units": 2,
+    "current_demand": 3,
+    "max_throughput_per_hour": 6,
+    "avg_service_time_minutes": 20,
+    "status": "OPERATIONAL",
+    "department_affinity": ["DEP-EMG", "DEP-CRD"]
+  },
+  {
+    "id": "RES-US-1",
+    "code": "US",
+    "name": "Point-of-Care Ultrasound (POCUS)",
+    "category": "IMAGING",
+    "total_units": 3,
+    "active_units": 3,
+    "current_demand": 2,
+    "max_throughput_per_hour": 9,
+    "avg_service_time_minutes": 15,
+    "status": "OPERATIONAL",
+    "department_affinity": ["DEP-EMG", "DEP-CRD", "DEP-GEN"]
+  },
+  {
+    "id": "RES-XR-1",
+    "code": "XR",
+    "name": "Digital X-Ray Suite",
+    "category": "IMAGING",
+    "total_units": 3,
+    "active_units": 3,
+    "current_demand": 4,
+    "max_throughput_per_hour": 15,
+    "avg_service_time_minutes": 12,
+    "status": "OPERATIONAL",
+    "department_affinity": ["DEP-ORT", "DEP-EMG", "DEP-GEN", "DEP-PED"]
+  },
+  {
+    "id": "RES-LAB-1",
+    "code": "LAB",
+    "name": "Stat Emergency Laboratory",
+    "category": "DIAGNOSTICS",
+    "total_units": 4,
+    "active_units": 4,
+    "current_demand": 8,
+    "max_throughput_per_hour": 24,
+    "avg_service_time_minutes": 25,
+    "status": "OPERATIONAL",
+    "department_affinity": ["DEP-EMG", "DEP-CRD", "DEP-GEN", "DEP-PED"]
+  },
+  {
+    "id": "RES-ECG-1",
+    "code": "ECG",
+    "name": "12-Lead ECG Station",
+    "category": "DIAGNOSTICS",
+    "total_units": 4,
+    "active_units": 4,
+    "current_demand": 3,
+    "max_throughput_per_hour": 20,
+    "avg_service_time_minutes": 10,
+    "status": "OPERATIONAL",
+    "department_affinity": ["DEP-CRD", "DEP-EMG", "DEP-GEN"]
+  },
+  {
+    "id": "RES-PROC-1",
+    "code": "PROC",
+    "name": "Minor Procedure & Suture Bay",
+    "category": "PROCEDURE",
+    "total_units": 2,
+    "active_units": 2,
+    "current_demand": 1,
+    "max_throughput_per_hour": 4,
+    "avg_service_time_minutes": 30,
+    "status": "OPERATIONAL",
+    "department_affinity": ["DEP-EMG", "DEP-ORT", "DEP-PED"]
+  }
+]
