@@ -293,25 +293,40 @@ class MLService:
         day_of_week: int,
         prev_hour_arrivals: float,
         rolling_3hr_avg: float,
-        current_active_queue: int
+        current_active_queue: int,
+        prev_3hr_arrivals: Optional[float] = None,
+        prev_6hr_arrivals: Optional[float] = None,
+        rolling_6hr_avg: Optional[float] = None
     ) -> Dict[str, Any]:
         """
         Forecasts hospital-wide incoming arrivals in next 30-60 min.
         """
         is_weekend = 1 if day_of_week in [5, 6] else 0
-        features = [
-            hour_of_day,
-            day_of_week,
-            is_weekend,
-            prev_hour_arrivals,
-            rolling_3hr_avg,
-            current_active_queue
-        ]
+        p3 = prev_3hr_arrivals if prev_3hr_arrivals is not None else prev_hour_arrivals
+        p6 = prev_6hr_arrivals if prev_6hr_arrivals is not None else prev_hour_arrivals
+        r6 = rolling_6hr_avg if rolling_6hr_avg is not None else rolling_3hr_avg
+
+        feat_map = {
+            'hour_of_day': hour_of_day,
+            'day_of_week': day_of_week,
+            'is_weekend': is_weekend,
+            'prev_hour_arrivals': prev_hour_arrivals,
+            'prev_3hr_arrivals': p3,
+            'prev_6hr_arrivals': p6,
+            'rolling_3hr_avg': rolling_3hr_avg,
+            'rolling_6hr_avg': r6,
+            'current_active_queue': current_active_queue
+        }
 
         if self.arrival_model_data and "model" in self.arrival_model_data:
             model = self.arrival_model_data["model"]
             feat_names = self.arrival_model_data.get("features", [])
-            X_df = pd.DataFrame([features], columns=feat_names if feat_names else None)
+            if feat_names:
+                features = [feat_map.get(col, 0.0) for col in feat_names]
+                X_df = pd.DataFrame([features], columns=feat_names)
+            else:
+                features = list(feat_map.values())
+                X_df = pd.DataFrame([features])
             pred_arrivals = float(model.predict(X_df)[0])
             pred_arrivals = max(round(pred_arrivals, 1), 1.0)
         else:
